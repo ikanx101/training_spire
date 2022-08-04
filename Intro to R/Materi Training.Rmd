@@ -2,14 +2,14 @@
 title       : Training Data Science
 subtitle    : Introduction to Web Scraping using R
 author      : Ikang Fadhli
-job         : ikanx101.com
+job         : find me at ikanx101.com
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax, quiz, bootstrap] # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-logo        : spire.png
+logo        : R logo.png
 biglogo     : spire.png
 assets      : {assets: ../../assets}
 --- 
@@ -403,4 +403,6 @@ Jika sudah terlanjur memiliki nama variabel yang tidak seragam atau mengandung s
 
 --- .segue bg:grey
 
-# _INTRODUCTION TO WEB SCRAPING_
+# Materi __Intro to R__
+
+Bisa kalian unduh di _link_ [berikut](https://github.com/ikanx101/belajaR/raw/master/Materi%20Training/Day%201%20-%20R%20Series/Intro%20to%20R%20Volume%203.pdf).

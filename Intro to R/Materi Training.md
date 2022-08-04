@@ -2,14 +2,14 @@
 title       : Training Data Science
 subtitle    : Introduction to Web Scraping using R
 author      : Ikang Fadhli
-job         : ikanx101.com
+job         : find me at ikanx101.com
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax, quiz, bootstrap] # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-logo        : spire.png
+logo        : R logo.png
 biglogo     : spire.png
 assets      : {assets: ../../assets}
 --- 
@@ -406,7 +406,7 @@ example(sum)
 ## [1] 15
 ```
 
---- .class #id
+--- .segue bg:grey
 
 # Mulai Bekerja dengan __R__
 
@@ -479,8 +479,15 @@ Berikut adalah tata cara pemberian nama yang akan membuat pekerjaan kita lebih e
 
 Contoh: variabel `tinggi badan` akan lebih baik ditulis dalam bentuk `tinggi.badan` atau `tinggi_badan`.
 
+--- .class #id
+
+## Tata Cara Memberikan Nama _Object_ atau Variabel
+
 Jika sudah terlanjur memiliki nama variabel yang tidak seragam atau mengandung spasi (biasanya terjadi saat kita meng- _import_ data dari sumber lain seperti: _excel_), kita bisa merapikannya dengan otomatis dengan memanfaatkan `library(janitor)` fungsi `make_clean_names()` atau `clean_names()`.
 
 
+--- .segue bg:grey
 
-https://raw.githubusercontent.com/ikanx101/belajaR/master/Materi%20Training/Day%201%20-%20R%20Series/buku.Rmd
+# Materi __Intro to R__
+
+Bisa kalian unduh di _link_ [berikut](https://github.com/ikanx101/belajaR/raw/master/Materi%20Training/Day%201%20-%20R%20Series/Intro%20to%20R%20Volume%203.pdf).
