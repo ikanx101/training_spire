@@ -430,6 +430,361 @@ Untuk mengetahui di mana <em>working directory</em> kita, bisa digunakan perinta
   
 </slide>
 
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengenal <em>packages</em> atau <em>library</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><code>packages</code> atau <code>library</code> adalah sekumpulan fungsi yang telah dibuat dan dibakukan untuk kemudian disertakan di halaman <em>web</em> CRAN atau github. <code>library</code> bisa kita <em>install</em> dan gunakan dengan mudah.</p>
+
+<p>Seperti yang sudah saya infokan di bagian pendahuluan. Banyak orang atau komunitas yang mengembangkan berbagai macam <code>library</code> sehingga memudahkan kita untuk menyelesaikan masalah di data kita. Kita tidak perlu lagi membuat algoritma dari nol. Cukup memanfaatkan <code>library</code> yang tepat saja.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengenal <em>packages</em> atau <em>library</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Beberapa contoh <em>libraries</em> yang sering saya gunakan:</p>
+
+<ol>
+<li><code>dplyr</code>: <em>data carpentry</em> menggunakan <em>tidy principle</em>.</li>
+<li><code>ggplot2</code>: <em>data visualization</em>.</li>
+<li><code>rvest</code>: <em>web scraping</em>.</li>
+<li><code>tidytext</code>: <em>text analysis</em>.</li>
+<li><code>reshape2</code>: <em>data manipulation</em>.</li>
+<li><code>readxl</code> atau <code>openxlsx</code>: <em>export</em> dan <em>import</em> <em>excel files</em>.</li>
+<li><code>officer</code>: membuat <em>Ms. Office files</em> seperti <em>excel</em>, <em>docx</em>, dan <em>powerpoint</em>.</li>
+<li><code>expss</code>: <strong>SPSS</strong> di <strong>R</strong>.</li>
+<li><code>xaringan</code>: membuat <em>file</em> presentasi berformat <code>html</code>.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Instalasi <em>Packages</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><code>library</code> di <strong>R</strong> bisa di-<em>install</em> dengan mudah dengan menggunakan perintah <code>install.packages(&#39;nama packages&#39;)</code>. Tanda dalam kurung diisi <code>character</code> nama <code>library</code>. Bisa menggunakan <code>&quot; &quot;</code> atau <code>&#39; &#39;</code>. </p>
+
+<p>Proses instalasi <code>library</code> ini membutuhkan koneksi internet karena <strong>R</strong> akan otomatis terhubung ke dalam situs <em>web</em> <strong>CRAN</strong>. Setelah proses instalasi selesai, maka koneksi internet tidak diperlukan lagi (kecuali untuk melakukan <em>web scraping</em>). </p>
+
+<p>Contoh:</p>
+
+<p><code>install.packages(&#39;readxl&#39;)</code></p>
+
+<p><code>install.packages(&quot;rvest&quot;)</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengaktifkan <em>Packages</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><code>library</code> yang sudah di-<em>install</em> bisa diaktifkan dengan menggunakan perintah <code>library(nama packages)</code> tanpa menggunakan tanda <code>&quot; &quot;</code> atau <code>&#39; &#39;</code>.</p>
+
+<p>Pengaktifan <code>library</code> cukup dilakukan sekali saja di awal pengerjaan <em>project</em> (tidak perlu dilakukan berulang kali). Contoh:</p>
+
+<pre><code class="r">library(dplyr)
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;
+</code></pre>
+
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag
+</code></pre>
+
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Serba-Serbi Tentang <em>Packages</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Beberapa <code>library</code> saat diaktifkan akan menghasilkan pesan tertentu seperti di atas. Hal ini merupakan sesuatu yang <strong>normal</strong> terjadi.</p>
+
+<p>Untuk beberapa <code>library</code> ada kemungkinan (kecil) ditemukan kasus saat mereka tidak kompatibel. Akibatnya beberapa fungsi perintah di <code>library</code> tersebut akan menjadi kacau.</p>
+
+<p>Misalnya pada saat kita memanggil <code>library(tidyverse)</code> dan <code>library(plyr)</code>, maka perintah <code>filter()</code> yang dimiliki <code>tidyverse</code> akan tidak berjalan dengan baik. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Serba-Serbi Tentang <em>Packages</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Ada beberapa solusi yang bisa kita lakukan:</p>
+
+<ul>
+<li>Selalu mengaktifkan <code>library</code> sesuai dengan urutannya. Biasanya setiap kali kita mengaktifkan <code>library</code> akan muncul <em>warnings</em> mengenai kompatibilitas <code>library</code> tersebut dengan <code>library</code> lain.</li>
+<li>Menonaktikan <code>library</code> yang sudah tidak perlu digunakan dengan perintah:</li>
+</ul>
+
+<p><code>detach(&quot;package:tidytext&quot;, unload = TRUE)</code></p>
+
+<ul>
+<li>Memanggil <code>library</code> tanpa harus mengaktifkannya. Kita bisa melakukannya dengan menggunakan tanda <code>nama packages::</code>. Contoh:</li>
+</ul>
+
+<p><code>reshape2::melt(data)</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2><em>Help</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Setiap <code>library</code> yang telah di-<em>install</em> dan aktif disertai dengan fitur <em>help</em> yang berfungsi sebagai informasi kepada <em>user</em>. Jika kita ingin mengetahui bagaimana isi dari perintah suatu fungsi, kita bisa gunakan perintah <code>help(nama fungsi)</code> atau <code>?nama fungsi</code>. <em>Help</em> akan muncul pada tab <em>help</em> di <strong>R Studio</strong>. Contoh:</p>
+
+<pre><code class="r">help(sum)
+</code></pre>
+
+<p>atau</p>
+
+<pre><code class="r">?sum
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2><em>Example</em></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Selain <em>help</em>, kita bisa melihat contoh pemakaian dari suatu fungsi di <strong>R</strong> dengan menggunakan perintah <code>example()</code>. Contoh:</p>
+
+<pre><code class="r">example(sum)
+</code></pre>
+
+<pre><code>## 
+## sum&gt; ## Pass a vector to sum, and it will add the elements together.
+## sum&gt; sum(1:5)
+## [1] 15
+## 
+## sum&gt; ## Pass several numbers to sum, and it also adds the elements.
+## sum&gt; sum(1, 2, 3, 4, 5)
+## [1] 15
+## 
+## sum&gt; ## In fact, you can pass vectors into several arguments, and everything gets added.
+## sum&gt; sum(1:2, 3:5)
+## [1] 15
+## 
+## sum&gt; ## If there are missing values, the sum is unknown, i.e., also missing, ....
+## sum&gt; sum(1:5, NA)
+## [1] NA
+## 
+## sum&gt; ## ... unless  we exclude missing values explicitly:
+## sum&gt; sum(1:5, NA, na.rm = TRUE)
+## [1] 15
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h1>Mulai Bekerja dengan <strong>R</strong></h1>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengenal Data</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Sebelum memulai bekerja dengan <strong>R</strong>, ada baiknya saya jelaskan dan ingatkan kembali beberapa hal penting terkait data. Dengan demikian, kita bisa memilih jenis analisa statistika apa yang tepat untuk tipe-tipe data yang berbeda.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Tipe Data (statistika)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Secara statistika, berikut adalah pembagian data berdasarkan tipenya:</p>
+
+<ol>
+<li>Data kualitatif: adalah data yang tidak bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai <strong>data kategorik</strong>. 
+
+<ul>
+<li><strong>Nominal</strong>; Representasi dari sesuatu. Contoh: <code>gender</code>, <code>1</code> saya tulis sebagai <code>pria</code> dan <code>2</code> saya tulis sebagai <code>wanita</code>. </li>
+<li><strong>Ordinal</strong>; Urutan dari data menjadi penting. Contoh: skala <em>likert</em> 1 - 6.</li>
+</ul></li>
+<li>Data kuantitatif: adalah data yang bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai <strong>data numerik</strong>. 
+
+<ul>
+<li><strong>Diskrit</strong>; bilangan bulat (<em>integer</em>). </li>
+<li><strong>Kontinu</strong>; bilangan <em>real</em> (mengandung koma).</li>
+</ul></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Tipe Data (<strong>R</strong>)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Di <strong>R</strong> ada beberapa tipe data yang sering digunakan. Secara hierarki, bisa diurutkan sebagai berikut:</p>
+
+<p><code>character &gt; numeric &gt; integer &gt; logical</code></p>
+
+<ol>
+<li><code>character</code>: merupakan tipe data berupa karakter atau <code>string</code>. Semua data bisa dilihat sebagai <code>character</code>. Oleh karena itu, secara hierarki tipe data ini ditempatkan di urutan paling atas. Namun, data tipe ini tidak bisa dilakukan operasi aritmatika <em>yah</em>.</li>
+<li><code>numeric</code>: merupakan tipe data angka berupa bilangan <em>real</em>. Kalau saya boleh bilang, tipe data ini mirip dengan data numerik di poin <strong>2.1.1</strong>.</li>
+<li><code>integer</code>: merupakan tipe data angka berupa bilangan bulat. Sekilas mirip dengan tipe data diskrit di poin <strong>2.1.1</strong>. Namun di beberapa kondisi, tipe data ini bisa dijadikan data <strong>kategorik</strong> sehingga kita bisa sebut tipenya menjadi <code>factor</code>.</li>
+<li><code>logical</code>: merupakan tipe data <em>boolean</em>. Hanya berisi <code>TRUE</code> atau <code>FALSE</code>. Tipe data ini sangat berguna saat kita melakukan <em>if conditional</em>, <em>looping</em>, atau membuat <em>regex</em> (<em>reguler expression</em>).</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Struktur Data di <strong>R</strong></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Ada beberapa bentuk struktur data di <strong>R</strong>, yakni: </p>
+
+<ol>
+<li><em>Single value</em>; satu objek yang berisi satu <em>value</em> saja.</li>
+<li><em>Vector</em>; kumpulan dari beberapa <em>single value(s)</em> yang menjadi satu objek. Bayangkan sebagai satu buah kolom di <em>file Ms. Excel</em>.</li>
+<li><em>Data frame</em> atau <em>tibble</em>; merupakan kumpulan dari beberapa <em>vectors</em> yang memiliki ukuran sama. Bayangkan sebagai satu tabel di <em>Ms. Excel</em> yang banyaknya baris di setiap kolom sama.</li>
+<li><em>List</em>; merupakan bentuk struktur data yang sangat kompleks. Berisi <em>multiple data</em> dengan struktur bermacam-macam.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Apa gunanya kita mengetahui jenis dan struktur data di <strong>R</strong>?</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Beberapa algoritma yang tersedia di <em>library</em> mengharuskan kita memiliki <em>input</em> yang ter-standar, baik dari segi jenis dan strukturnya.</p>
+
+<p>Dengan mengetahui jenis dan struktur data, kita bisa lebih mudah bekerja dengan algoritma yang ada di <em>library</em>.</p>
+
+<p>Contoh:</p>
+
+<blockquote>
+<p>Algoritma analisa <em>simple linear regression</em> (<code>lm()</code>) memerlukan input berupa <code>data.frame()</code> dengan masing-masing <em>variables</em> yang ada di dalamnya berjenis <em>numeric</em>.</p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Tata Cara Memberikan Nama <em>Object</em> atau Variabel</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Setiap <em>object</em> atau variabel di <strong>R</strong> bisa diberikan nama sesuai dengan keinginan kita. Tidak ada aturan baku dalam memberikan nama. </p>
+
+<blockquote>
+<p>Tapi, dengan memberikan nama yang <strong>tepat</strong> kita bisa bekerja dengan ebih cepat dan efisien.
+Berikut adalah tata cara pemberian nama yang akan membuat pekerjaan kita lebih efisien:</p>
+</blockquote>
+
+<ol>
+<li>Seragamkan kapital atau non kapital dari nama variabel kita. Jika menggunakan <em>lowercase</em>, maka harus konsisten di setiap data yang ada di <em>environment</em> <strong>R</strong>. </li>
+<li>Hindari penggunaan spasi &quot; &quot;. Jika memang tidak bisa dihindari, gunakan tanda &quot;.&quot; atau &quot;_&quot;. </li>
+</ol>
+
+<p>Contoh: variabel <code>tinggi badan</code> akan lebih baik ditulis dalam bentuk <code>tinggi.badan</code> atau <code>tinggi_badan</code>.</p>
+
+<p>Jika sudah terlanjur memiliki nama variabel yang tidak seragam atau mengandung spasi (biasanya terjadi saat kita meng- <em>import</em> data dari sumber lain seperti: <em>excel</em>), kita bisa merapikannya dengan otomatis dengan memanfaatkan <code>library(janitor)</code> fungsi <code>make_clean_names()</code> atau <code>clean_names()</code>.</p>
+
+<p><a href="https://raw.githubusercontent.com/ikanx101/belajaR/master/Materi%20Training/Day%201%20-%20R%20Series/buku.Rmd">https://raw.githubusercontent.com/ikanx101/belajaR/master/Materi%20Training/Day%201%20-%20R%20Series/buku.Rmd</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
     <slide class="backdrop"></slide>
   </slides>
   <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
@@ -544,6 +899,111 @@ Untuk mengetahui di mana <em>working directory</em> kita, bisa digunakan perinta
       <a href="#" target="_self" rel='tooltip' 
         data-slide=16 title='Working Directory'>
          16
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Mengenal <em>packages</em> atau <em>library</em>'>
+         17
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Mengenal <em>packages</em> atau <em>library</em>'>
+         18
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Instalasi <em>Packages</em>'>
+         19
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Mengaktifkan <em>Packages</em>'>
+         20
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Serba-Serbi Tentang <em>Packages</em>'>
+         21
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Serba-Serbi Tentang <em>Packages</em>'>
+         22
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='<em>Help</em>'>
+         23
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='<em>Example</em>'>
+         24
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Mulai Bekerja dengan <strong>R</strong>'>
+         25
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Mengenal Data'>
+         26
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Tipe Data (statistika)'>
+         27
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Tipe Data (<strong>R</strong>)'>
+         28
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Struktur Data di <strong>R</strong>'>
+         29
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Apa gunanya kita mengetahui jenis dan struktur data di <strong>R</strong>?'>
+         30
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Tata Cara Memberikan Nama <em>Object</em> atau Variabel'>
+         31
       </a>
     </li>
     

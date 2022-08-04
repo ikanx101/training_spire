@@ -144,6 +144,7 @@ Beberapa operator dasar di __R__ antara lain:
 
 - `=` atau `<-`, digunakan untuk melakukan pendefinisian suatu objek. Contoh:
 
+
 ```r
 a = 10
 b <- 3
@@ -159,6 +160,7 @@ a + b
 ## Mengenal operator dasar
 
 - `' '` atau `" "`, digunakan untuk menandai tipe variabel berupa `character`. Lalu apa beda penggunaan `' '` dengan `" "`? `" "` digunakan saat `'` dibutuhkan dalam suatu `character`. Contoh:
+
 
 ```r
 a = 'saya hendak pergi ke pasar'
@@ -185,6 +187,7 @@ b
 
 - `==`, `<`, `>`, `<=`, atau `>=`, digunakan untuk mengecek apakah dua variabel itu memiliki kesamaan atau tidak. _Output_ dari operator ini adalah `logic` (_TRUE or FALSE_). Contoh:
 
+
 ```r
 a = 5
 b = 3
@@ -208,6 +211,7 @@ a > b
 ## Mengenal operator dasar
 
 - `;` atau _<enter>_, digunakan untuk memisahkan baris kode pada skrip algoritma. Contoh:
+
 
 ```r
 a = 5;b = 3;a*b
@@ -254,3 +258,229 @@ setwd("/cloud/project/Intro to R")
 
 Perubahan _working directory_ akan sangat berguna saat kita ingin memgambil data dari _folder path_ tertentu dan menyimpan hasil analisa kita ke _folder path_ yang berbeda.
 
+
+--- .class #id
+
+## Mengenal _packages_ atau _library_
+
+`packages` atau `library` adalah sekumpulan fungsi yang telah dibuat dan dibakukan untuk kemudian disertakan di halaman _web_ CRAN atau github. `library` bisa kita _install_ dan gunakan dengan mudah.
+
+Seperti yang sudah saya infokan di bagian pendahuluan. Banyak orang atau komunitas yang mengembangkan berbagai macam `library` sehingga memudahkan kita untuk menyelesaikan masalah di data kita. Kita tidak perlu lagi membuat algoritma dari nol. Cukup memanfaatkan `library` yang tepat saja.
+
+--- .class #id
+
+## Mengenal _packages_ atau _library_
+
+Beberapa contoh _libraries_ yang sering saya gunakan:
+
+1. `dplyr`: _data carpentry_ menggunakan _tidy principle_.
+2. `ggplot2`: _data visualization_.
+3. `rvest`: _web scraping_.
+4. `tidytext`: _text analysis_.
+5. `reshape2`: _data manipulation_.
+6. `readxl` atau `openxlsx`: _export_ dan _import_ _excel files_.
+7. `officer`: membuat _Ms. Office files_ seperti _excel_, _docx_, dan _powerpoint_.
+8. `expss`: __SPSS__ di __R__.
+8. `xaringan`: membuat _file_ presentasi berformat `html`.
+
+--- .class #id
+
+## Instalasi _Packages_
+
+`library` di __R__ bisa di-_install_ dengan mudah dengan menggunakan perintah `install.packages('nama packages')`. Tanda dalam kurung diisi `character` nama `library`. Bisa menggunakan `" "` atau `' '`. 
+
+Proses instalasi `library` ini membutuhkan koneksi internet karena __R__ akan otomatis terhubung ke dalam situs _web_ __CRAN__. Setelah proses instalasi selesai, maka koneksi internet tidak diperlukan lagi (kecuali untuk melakukan _web scraping_). 
+
+Contoh:
+
+`install.packages('readxl')`
+
+`install.packages("rvest")`
+
+--- .class #id
+
+## Mengaktifkan _Packages_
+
+`library` yang sudah di-_install_ bisa diaktifkan dengan menggunakan perintah `library(nama packages)` tanpa menggunakan tanda `" "` atau `' '`.
+
+Pengaktifan `library` cukup dilakukan sekali saja di awal pengerjaan _project_ (tidak perlu dilakukan berulang kali). Contoh:
+
+
+```r
+library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+
+--- .class #id
+
+## Serba-Serbi Tentang _Packages_
+
+Beberapa `library` saat diaktifkan akan menghasilkan pesan tertentu seperti di atas. Hal ini merupakan sesuatu yang __normal__ terjadi.
+
+Untuk beberapa `library` ada kemungkinan (kecil) ditemukan kasus saat mereka tidak kompatibel. Akibatnya beberapa fungsi perintah di `library` tersebut akan menjadi kacau.
+
+Misalnya pada saat kita memanggil `library(tidyverse)` dan `library(plyr)`, maka perintah `filter()` yang dimiliki `tidyverse` akan tidak berjalan dengan baik. 
+
+--- .class #id
+
+## Serba-Serbi Tentang _Packages_
+
+Ada beberapa solusi yang bisa kita lakukan:
+
+- Selalu mengaktifkan `library` sesuai dengan urutannya. Biasanya setiap kali kita mengaktifkan `library` akan muncul _warnings_ mengenai kompatibilitas `library` tersebut dengan `library` lain.
+- Menonaktikan `library` yang sudah tidak perlu digunakan dengan perintah:
+
+`detach("package:tidytext", unload = TRUE)`
+
+- Memanggil `library` tanpa harus mengaktifkannya. Kita bisa melakukannya dengan menggunakan tanda `nama packages::`. Contoh:
+
+`reshape2::melt(data)`
+
+--- .class #id
+
+## _Help_
+
+Setiap `library` yang telah di-_install_ dan aktif disertai dengan fitur _help_ yang berfungsi sebagai informasi kepada _user_. Jika kita ingin mengetahui bagaimana isi dari perintah suatu fungsi, kita bisa gunakan perintah `help(nama fungsi)` atau `?nama fungsi`. _Help_ akan muncul pada tab _help_ di __R Studio__. Contoh:
+
+
+```r
+help(sum)
+```
+
+atau
+
+
+```r
+?sum
+```
+
+
+--- .class #id
+
+## _Example_
+
+Selain _help_, kita bisa melihat contoh pemakaian dari suatu fungsi di __R__ dengan menggunakan perintah `example()`. Contoh:
+
+
+```r
+example(sum)
+```
+
+```
+## 
+## sum> ## Pass a vector to sum, and it will add the elements together.
+## sum> sum(1:5)
+## [1] 15
+## 
+## sum> ## Pass several numbers to sum, and it also adds the elements.
+## sum> sum(1, 2, 3, 4, 5)
+## [1] 15
+## 
+## sum> ## In fact, you can pass vectors into several arguments, and everything gets added.
+## sum> sum(1:2, 3:5)
+## [1] 15
+## 
+## sum> ## If there are missing values, the sum is unknown, i.e., also missing, ....
+## sum> sum(1:5, NA)
+## [1] NA
+## 
+## sum> ## ... unless  we exclude missing values explicitly:
+## sum> sum(1:5, NA, na.rm = TRUE)
+## [1] 15
+```
+
+--- .class #id
+
+# Mulai Bekerja dengan __R__
+
+--- .class #id
+
+## Mengenal Data
+
+Sebelum memulai bekerja dengan __R__, ada baiknya saya jelaskan dan ingatkan kembali beberapa hal penting terkait data. Dengan demikian, kita bisa memilih jenis analisa statistika apa yang tepat untuk tipe-tipe data yang berbeda.
+
+--- .class #id
+
+## Tipe Data (statistika)
+
+Secara statistika, berikut adalah pembagian data berdasarkan tipenya:
+
+1. Data kualitatif: adalah data yang tidak bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai __data kategorik__. 
+  * __Nominal__; Representasi dari sesuatu. Contoh: `gender`, `1` saya tulis sebagai `pria` dan `2` saya tulis sebagai `wanita`. 
+  * __Ordinal__; Urutan dari data menjadi penting. Contoh: skala _likert_ 1 - 6.
+2. Data kuantitatif: adalah data yang bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai __data numerik__. 
+  * __Diskrit__; bilangan bulat (_integer_). 
+  * __Kontinu__; bilangan _real_ (mengandung koma).
+
+--- .class #id
+
+## Tipe Data (__R__)
+
+Di __R__ ada beberapa tipe data yang sering digunakan. Secara hierarki, bisa diurutkan sebagai berikut:
+
+`character > numeric > integer > logical`
+
+1. `character`: merupakan tipe data berupa karakter atau `string`. Semua data bisa dilihat sebagai `character`. Oleh karena itu, secara hierarki tipe data ini ditempatkan di urutan paling atas. Namun, data tipe ini tidak bisa dilakukan operasi aritmatika _yah_.
+2. `numeric`: merupakan tipe data angka berupa bilangan _real_. Kalau saya boleh bilang, tipe data ini mirip dengan data numerik di poin __2.1.1__.
+3. `integer`: merupakan tipe data angka berupa bilangan bulat. Sekilas mirip dengan tipe data diskrit di poin __2.1.1__. Namun di beberapa kondisi, tipe data ini bisa dijadikan data __kategorik__ sehingga kita bisa sebut tipenya menjadi `factor`.
+4. `logical`: merupakan tipe data _boolean_. Hanya berisi `TRUE` atau `FALSE`. Tipe data ini sangat berguna saat kita melakukan _if conditional_, _looping_, atau membuat _regex_ (_reguler expression_).
+
+--- .class #id
+
+## Struktur Data di __R__
+
+Ada beberapa bentuk struktur data di __R__, yakni: 
+
+1. _Single value_; satu objek yang berisi satu _value_ saja.
+2. _Vector_; kumpulan dari beberapa _single value(s)_ yang menjadi satu objek. Bayangkan sebagai satu buah kolom di _file Ms. Excel_.
+3. _Data frame_ atau _tibble_; merupakan kumpulan dari beberapa _vectors_ yang memiliki ukuran sama. Bayangkan sebagai satu tabel di _Ms. Excel_ yang banyaknya baris di setiap kolom sama.
+4. _List_; merupakan bentuk struktur data yang sangat kompleks. Berisi _multiple data_ dengan struktur bermacam-macam.
+
+--- .class #id
+
+## Apa gunanya kita mengetahui jenis dan struktur data di __R__?
+
+Beberapa algoritma yang tersedia di _library_ mengharuskan kita memiliki _input_ yang ter-standar, baik dari segi jenis dan strukturnya.
+
+Dengan mengetahui jenis dan struktur data, kita bisa lebih mudah bekerja dengan algoritma yang ada di _library_.
+
+Contoh:
+
+> Algoritma analisa _simple linear regression_ (`lm()`) memerlukan input berupa `data.frame()` dengan masing-masing _variables_ yang ada di dalamnya berjenis _numeric_.
+
+--- .class #id
+
+## Tata Cara Memberikan Nama _Object_ atau Variabel
+
+Setiap _object_ atau variabel di __R__ bisa diberikan nama sesuai dengan keinginan kita. Tidak ada aturan baku dalam memberikan nama. 
+
+> Tapi, dengan memberikan nama yang __tepat__ kita bisa bekerja dengan ebih cepat dan efisien.
+Berikut adalah tata cara pemberian nama yang akan membuat pekerjaan kita lebih efisien:
+
+1. Seragamkan kapital atau non kapital dari nama variabel kita. Jika menggunakan _lowercase_, maka harus konsisten di setiap data yang ada di _environment_ __R__. 
+2. Hindari penggunaan spasi " ". Jika memang tidak bisa dihindari, gunakan tanda "." atau "_". 
+
+Contoh: variabel `tinggi badan` akan lebih baik ditulis dalam bentuk `tinggi.badan` atau `tinggi_badan`.
+
+Jika sudah terlanjur memiliki nama variabel yang tidak seragam atau mengandung spasi (biasanya terjadi saat kita meng- _import_ data dari sumber lain seperti: _excel_), kita bisa merapikannya dengan otomatis dengan memanfaatkan `library(janitor)` fungsi `make_clean_names()` atau `clean_names()`.
+
+
+
+https://raw.githubusercontent.com/ikanx101/belajaR/master/Materi%20Training/Day%201%20-%20R%20Series/buku.Rmd
