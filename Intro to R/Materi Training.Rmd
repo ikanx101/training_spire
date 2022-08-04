@@ -1,6 +1,6 @@
 ---
 title       : Training Data Science
-subtitle    : Introduction to Web Scraping using R
+subtitle    : Introduction to R
 author      : Ikang Fadhli
 job         : find me at ikanx101.com
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -10,7 +10,7 @@ widgets     : [mathjax, quiz, bootstrap] # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 logo        : R logo.png
-biglogo     : spire.png
+biglogo     : R logo.png
 assets      : {assets: ../../assets}
 --- 
 
