@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Training Data Science</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Training Data Science">
+  <meta name="author" content="Ikang Fadhli">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    
+  <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/spire.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  
+  <aside class="gdbar">
+    <img src="assets/img/spire.png">
+  </aside>
+  
+  <hgroup class="auto-fadein">
+    <h1>Training Data Science</h1>
+    <h2>Introduction to Web Scraping using R</h2>
+    <p>Ikang Fadhli<br/>ikanx101.com</p>
+  </hgroup>
+  
+  <article></article>  
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <article data-timings="">
+    <style type="text/css">
+body {background:grey transparent;
+}
+</style>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue" id="slide-2" style="background:grey;">
+  
+  <hgroup>
+    <h1><em>INTRODUCTION</em></h1>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2><em>Introduction</em> <strong>R</strong></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>R</strong> merupakan salah satu bahasa pemrograman yang biasa digunakan untuk
+menyelesaikan permasalahan terkait dengan data. Kita bisa membuat model
+prediksi (<em>machine learning</em>, <em>artificial intelligence</em>, dan <em>deep
+learning</em>) sampai membuat algoritma automasi menggunakan <strong>R</strong>.</p>
+
+<p>Salah satu kelebihan <strong>R</strong> adalah:</p>
+
+<blockquote>
+<p>R is made by statistician for statistician.</p>
+</blockquote>
+
+<p>Biasanya <em>package</em> atau <em>library</em> yang di-<em>launching</em> di <strong>R</strong>
+disertakan dengan jurnal ilmiah sehingga kita bisa dengan yakin
+memakainya.</p>
+
+<p><strong>R</strong> tersedia secara <em>open source</em> sehingga <em>software</em> ini gratis dan
+dikembangkan secara massal oleh komunitas-komunitas di seluruh dunia.
+Sehingga <em>package</em> atau <em>library</em> yang disediakan untuk analisis
+statistika dan analisa numerik juga sangat lengkap dan terus bertambah
+setiap saat.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Fitur dan Karakteristik</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Sama halnya dengan bahasa pemograman lainnya. Berbeda bahasa berarti berbeda peraturan / cara menulis <em>code</em> (algoritma). Tapi jangan khawatir, dengan memanfaatkan <em>tidy principle</em> di <strong>R</strong>, kita bisa menulis algoritma dengan mudah (bagi kita dan pembaca algoritmanya).</p>
+
+<blockquote>
+<p>Oleh karena itu, menurut saya <strong>R</strong> menawarkan <em>learning curve</em> yang jauh lebih baik dibandingkan <em>Python</em>.
+Beberapa karakter dari <strong>R</strong> adalah sebagai berikut:</p>
+</blockquote>
+
+<ul>
+<li>Bahasa <strong>R</strong> bersifat <em>case sensitive</em>. Setiap perbedaan cara penulisan (kapital vs non kapital) akan membedakan suatu objek. Contoh:</li>
+</ul>
+
+<pre><code class="r">x = &#39;Spire&#39;
+y = &#39;spire&#39;
+x == y
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Fitur dan Karakteristik</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Segala sesuatu yang ada pada program <strong>R</strong> akan diangap sebagai objek. konsep objek ini sama dengan bahasa pemrograman berbasis objek yang lain seperti <em>Java</em>, <em>C++</em>, <em>Python</em>, dll. Perbedaannya adalah bahasa <strong>R</strong> relatif lebih sederhana dibandingkan bahasa pemrograman berbasis objek yang lain.</li>
+<li><em>Interpreted language</em> atau <em>script</em>. Bahasa <strong>R</strong> memungkinkan pengguna untuk melakukan kerja pada <strong>R</strong> tanpa perlu melakukan <em>compile</em> menjadi <em>executionable</em> file (.exe).</li>
+<li>Mendukung proses <em>loop</em>, <em>decision making</em>, dan menyediakan berbagai jenis operator (aritmatika, logika, dll).</li>
+<li>Mendukung <em>export</em> dan <em>import</em> berbagai <em>format file</em>, seperti: <code>.txt</code>, <code>.xlsx</code>, <code>.csv</code>, <code>.json</code>, <code>sql</code>, dll.</li>
+<li>Mudah ditingkatkan melalui penambahan fungsi atau <em>library</em>. Penambahan ini dapat dilakukan secara <em>online</em> melalui <strong>CRAN</strong> atau melalui sumber seperti <strong>github</strong>.</li>
+<li>Menyediakan berbagai fungsi untuk keperluan visualisasi data. Visualisasi data pada <strong>R</strong> dapat menggunakan <em>library</em> bawaan atau lainnya seperti <code>ggplot2</code>, <code>ggvis</code>, <code>plotly</code>, dll.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Kelebihan <strong>R</strong></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Selain karena <strong>R</strong> dapat digunakan secara gratis terdapat kelebihan lain yang ditawarkan, antara lain:</p>
+
+<ol>
+<li><em>Protability</em>, penggunaan <em>software</em> dapat digunakan kapanpun tanpa terikat oleh masa berakhirnya lisensi.</li>
+<li><em>Multiplatform</em>, <strong>R</strong> bersifat <em>Multiplatform Operating Systems</em>, dimana <strong>R</strong> bisa dijalankan di OS manapun. Baik Windows, iOS, Linux, Raspbian, bahkan <a href="https://passingthroughresearcher.wordpress.com/2019/07/30/install-r-3-5-2-di-android/">Android</a>! Dengan fitur yang sama (tidak ada perbedaan fitur di semua OS).</li>
+<li><em>Programable</em>, pengguna dapat membuat fungsi dan metode baru atau mengembangkan modifikasi dari analisis statistika yang telah ada pada sistem <strong>R</strong>.</li>
+<li>Fasiltas grafik yang lengkap.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Kekurangan <strong>R</strong></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Adapun kekurangan dari R antara lain:</p>
+
+<ul>
+<li><em>Point and Click GUI</em>, interaksi utama dengan <strong>R</strong> bersifat <strong>CLI</strong> (<em>Command Line Interface</em>), walaupun saat ini telah dikembangkan <em>library</em> yang memungkinkan kita berinteraksi dengan <strong>R</strong> menggunakan <strong>GUI</strong> (<em>Graphical User Interface</em>) sederhana menggunakan <code>library(R-Commander)</code> yang memiliki fungsi yang terbatas.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>R vs R Studio</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Pada dasarnya, <em>software</em> <strong>R</strong> bisa di-<em>download</em> dan di-<em>install</em> langsung dari situs <a href="https://cran.r-project.org/bin/windows/base/">CRAN</a>. <em>Software</em> <strong>R</strong> ini bersifat <strong>CLI</strong>.</p>
+
+<blockquote>
+<p>Bayangkan Anda membuka aplikasi <strong>notepad</strong>. Putih dan bersih kan? 
+Seperti itulah <em>software</em> <strong>R</strong>.</p>
+</blockquote>
+
+<p>Bagi Kamu yang kaget dan tidak terbiasa melihat tampilan yang <em>intimidating</em> seperti itu, Kamu bisa meng-<em>install software</em> <strong>R Studio</strong>. Sebuah <em>software</em> GUI yang bisa membuat <strong>R</strong> terlihat lebih <em>user friendly</em>. <strong>R Studio</strong> bisa di-<em>download</em> <a href="https://rstudio.com/products/rstudio/download/">di sini</a>. </p>
+
+<blockquote>
+<p>Tapi tolong diperhatikan bahwa <strong>R Studio</strong> hanya tambahan tampilan dari <strong>R</strong> standar. Jadi Kamu tetap harus meng- <em>install</em> <strong>R</strong> yah!</p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>R Studio</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Kelebihan R Studio antara lain:</p>
+
+<ol>
+<li><em>Free</em>, kita bisa memilih versi gratis dari <strong>R Studio</strong> tanpa ada pengurangan fitur dasar dari <strong>R</strong>.</li>
+<li><em>R Studio Cloud</em>, tersedia layanan <em>cloud</em> sehingga bisa diakses dan digunakan menggunakan <em>browser</em> di <em>gadget</em> manapun. Layanan <em>cloud</em> ini bisa diakses <a href="https://rstudio.cloud">di sini</a> dan dikoneksikan ke akun <strong>github</strong> Kamu. </li>
+<li><em>Shiny Apps</em>, kita bisa membuat <em>apps</em> berbasis <em>web</em> dari <strong>R</strong>. <em>Apps</em> ini bisa dijadikan <em>dashboard</em> atau mesin kalkulasi otomatis. Tergantung seberapa jauh Kamu membuat <em>coding</em> algoritmanya.</li>
+<li><em>R Markdown</em>, ini fitur yang paling saya sukai. Bahkan untuk menulis <em>web</em> ini, saya menggunakan <em>R Markdown</em>. Output files -nya beragam, mulai dari <code>docx</code>, <code>pptx</code>, <code>pdf</code>, <code>html</code>, <code>md</code>, dll. Bahkan kita bisa membuat <a href="https://bookdown.org/"><em>e-book</em></a> dengan memanfaatkan <code>library(bookdown)</code>.</li>
+</ol>
+
+<p>Jadi, setelah membaca bagian ini pastikan Kamu sudah meng- <em>install</em> <strong>R</strong> dan <strong>R Studio</strong> yah. Jangan sampai terbalik urutan instalasinya!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue" id="slide-10" style="background:grey;">
+  
+  <hgroup>
+    <h1><em>LET&#39;s GET STARTED</em></h1>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengenal operator dasar</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Beberapa operator dasar di <strong>R</strong> antara lain:</p>
+
+<ul>
+<li><code>=</code> atau <code>&lt;-</code>, digunakan untuk melakukan pendefinisian suatu objek. Contoh:</li>
+</ul>
+
+<pre><code class="r">a = 10
+b &lt;- 3
+a + b
+</code></pre>
+
+<pre><code>## [1] 13
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengenal operator dasar</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li><code>&#39; &#39;</code> atau <code>&quot; &quot;</code>, digunakan untuk menandai tipe variabel berupa <code>character</code>. Lalu apa beda penggunaan <code>&#39; &#39;</code> dengan <code>&quot; &quot;</code>? <code>&quot; &quot;</code> digunakan saat <code>&#39;</code> dibutuhkan dalam suatu <code>character</code>. Contoh:</li>
+</ul>
+
+<pre><code class="r">a = &#39;saya hendak pergi ke pasar&#39;
+b = &quot;i don&#39;t want to buy it&quot;
+a
+</code></pre>
+
+<pre><code>## [1] &quot;saya hendak pergi ke pasar&quot;
+</code></pre>
+
+<pre><code class="r">b
+</code></pre>
+
+<pre><code>## [1] &quot;i don&#39;t want to buy it&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengenal operator dasar</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li><code>==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, atau <code>&gt;=</code>, digunakan untuk mengecek apakah dua variabel itu memiliki kesamaan atau tidak. <em>Output</em> dari operator ini adalah <code>logic</code> (<em>TRUE or FALSE</em>). Contoh:</li>
+</ul>
+
+<pre><code class="r">a = 5
+b = 3
+a == b
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r">a &gt; b
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Mengenal operator dasar</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li><code>;</code> atau <em><enter></em>, digunakan untuk memisahkan baris kode pada skrip algoritma. Contoh:</li>
+</ul>
+
+<pre><code class="r">a = 5;b = 3;a*b
+</code></pre>
+
+<pre><code>## [1] 15
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Working Directory</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Apa itu <em>working directory</em>?</p>
+
+<blockquote>
+<p><em>Working directory</em> adalah <em>folder path default</em> untuk <strong>R</strong> melakukan <em>import</em> dan <em>export</em> data.
+Untuk mengetahui di mana <em>working directory</em> kita, bisa digunakan perintah:</p>
+</blockquote>
+
+<pre><code class="r">getwd()
+</code></pre>
+
+<pre><code>## [1] &quot;/cloud/project/Intro to R&quot;
+</code></pre>
+
+<p>Secara <em>default</em>, <strong>R</strong> menggunakan <code>C:\\My Documents</code> sebagai <em>working directory</em>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>Working Directory</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <blockquote>
+<p>Bagaimana mengubah <em>working directory</em>?</p>
+</blockquote>
+
+<p><em>Working directory</em> bisa diubah sesuai kemauan kita memanfaatkan perintah <code>setwd()</code>, tanda dalam kurung diisi dengan <em>folder path</em> yang diinginkan.</p>
+
+<pre><code class="r">setwd(&quot;/cloud/project/Intro to R&quot;)
+</code></pre>
+
+<blockquote>
+<p>Apa keuntungan mengubah-ubah <em>working directory</em>?</p>
+</blockquote>
+
+<p>Perubahan <em>working directory</em> akan sangat berguna saat kita ingin memgambil data dari <em>folder path</em> tertentu dan menyimpan hasil analisa kita ke <em>folder path</em> yang berbeda.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='<em>INTRODUCTION</em>'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='<em>Introduction</em> <strong>R</strong>'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Fitur dan Karakteristik'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Fitur dan Karakteristik'>
+         5
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Kelebihan <strong>R</strong>'>
+         6
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Kekurangan <strong>R</strong>'>
+         7
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='R vs R Studio'>
+         8
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='R Studio'>
+         9
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='<em>LET&#39;s GET STARTED</em>'>
+         10
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Mengenal operator dasar'>
+         11
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Mengenal operator dasar'>
+         12
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Mengenal operator dasar'>
+         13
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Mengenal operator dasar'>
+         14
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Working Directory'>
+         15
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Working Directory'>
+         16
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+
+  
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
