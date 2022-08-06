@@ -10,7 +10,7 @@ widgets     : [mathjax, quiz, bootstrap] # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 logo        : R logo.png
-biglogo     : R logo.png
+biglogo     : spire.png
 assets      : {assets: ../../assets}
 --- 
 

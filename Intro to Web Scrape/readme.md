@@ -87,8 +87,6 @@ Kali ini saya akan membahas teknik pertama dan kedua.
 
 ## `library(ralger)`
 
-<https://raw.githubusercontent.com/ikanx101/ikanx101.github.io/master/_posts/web%20scraping/post.Rmd>
-
 ------------------------------------------------------------------------
 
 # *JSON Reading*
