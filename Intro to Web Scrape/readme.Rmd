@@ -3,17 +3,7 @@ title: Training Dasar Web Scraping Menggunakan R
 subtitle: Teknik html Parsing dan json Reading
 author: Ikang Fadhli
 date: "`r format(Sys.Date(),'%d %b %Y')`"
-output:
-  html_document:
-    toc: true
-    toc_depth: 5
-    toc_float: 
-        collapsed: false
-    number_sections: true
-    theme: united
-    highlight: espresso
-    fig_caption: yes
-    code_folding: hide
+output: github_document
 ---
 
 
