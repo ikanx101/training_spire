@@ -81,12 +81,37 @@ Kali ini saya akan membahas teknik pertama dan kedua.
 
 ------------------------------------------------------------------------
 
+# Resep dan Alat yang Digunakan untuk *Web Scraping* di **R**
+
+Selain **R**, kita memerlukan *Chrome* dengan *extension*
+[`SelectorGadget`](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en).
+
+Mari kita mulai.
+
+------------------------------------------------------------------------
+
 # *Parsing HTML*
 
 ## `library(rvest)`
+
+`library(rvest)` merupakan salah satu *library* yang paling banyak
+digunakan untuk melakukan *web scraping* di **R** karena prinsip
+dasarnya (*html parsing*) bisa digunakan untuk (hampir) semua
+*websites*.
+
+> Jika menguasai `rvest`, kita bisa dengan mudah mendapatkan data dari
+> *web*.
+
+Kita hendak melakukan beberapa *web scraping* sebagai berikut:
+
+1.  Mengambil teks atau angka dari *web*.
+2.  Mengambil tabel dari *web*.
+3.  Mengambil *url(s)* dari *web*.
 
 ## `library(ralger)`
 
 ------------------------------------------------------------------------
 
 # *JSON Reading*
+
+## `library(jsonlite)`
