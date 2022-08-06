@@ -108,8 +108,6 @@ Kita hendak melakukan beberapa *web scraping* sebagai berikut:
 2.  Mengambil tabel dari *web*.
 3.  Mengambil *url(s)* dari *web*.
 
-## `library(ralger)`
-
 ------------------------------------------------------------------------
 
 # *JSON Reading*

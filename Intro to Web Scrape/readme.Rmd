@@ -92,8 +92,6 @@ Kita hendak melakukan beberapa _web scraping_ sebagai berikut:
 1. Mengambil tabel dari _web_.
 1. Mengambil _url(s)_ dari _web_.
 
-## `library(ralger)`
-
 
 ```{r,include=FALSE}
 
