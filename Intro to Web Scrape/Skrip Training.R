@@ -37,22 +37,26 @@ baca =          # ingin menyimpan hasil parsing html ke dalam object bernama "ba
 
 # langkah 3:
   # membaca title
-  baca %>% 
+  judul = 
+    baca %>% 
     html_nodes(".detail__title") %>% 
     html_text(trim = T)
 
   # membaca author
-  baca %>% 
+  wartawan = 
+    baca %>% 
     html_nodes(".detail__author") %>% 
     html_text(trim = T)
   
   # membaca timestamp dari berita
-  baca %>% 
+  waktu = 
+    baca %>% 
     html_nodes(".detail__date") %>% 
     html_text(trim = T)
 
   # membaca isi berita 
-  baca %>% 
+  isi_berita = 
+    baca %>% 
     html_nodes(".itp_bodycontent") %>% 
     html_text(trim = T)
 
