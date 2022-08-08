@@ -1,8 +1,5 @@
 ---
-title: Training Dasar Web Scraping Menggunakan R
-subtitle: Teknik html Parsing dan json Reading
-author: Ikang Fadhli
-date: "`r format(Sys.Date(),'%d %b %Y')`"
+title: "Training Dasar Web Scraping Menggunakan R Teknik html Parsing dan json Reading"
 output: github_document
 ---
 
