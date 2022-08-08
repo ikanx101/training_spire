@@ -104,11 +104,11 @@ links = url_utama %>% read_html() %>% html_nodes("a") %>% html_attr("href")
 
 # filtering yang diinginkan
 links_filtered = links[grepl("https://news.detik.com/berita/d",links)] # bisa baca reguler expression di materi pdf
-links_filtered = links_filtered[1:10] # hanya mengambil top 10 links berita terbaru
+links_filtered = links_filtered[1:50] # hanya mengambil top 10 links berita terbaru
 
-# scrape ke 10 link tersebut
-temp = vector("list",10)
-for(i in 1:10){
+# scrape ke 50 link tersebut
+temp = vector("list",50)
+for(i in 1:50){
   temp[[i]] = detik_scraper(links_filtered[i])
 }
 
