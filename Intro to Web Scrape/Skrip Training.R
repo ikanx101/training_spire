@@ -23,8 +23,22 @@ library(rvest) # berguna untuk parsing html
 # ==============================================================================
 # kita memulai web scraping
 
+# langkah 1:
+  # simpan url ke dalam R environment
+url = "https://news.detik.com/berita/d-6222306/jokowi-dampak-perubahan-iklim-memburuk-7-tahun-terakhir-suhu-terpanas"
 
+# langkah 2:
+  # parsing html-nya lalu disimpan dalam object tertentu
+baca =          # ingin menyimpan hasil parsing html ke dalam object bernama "baca"
+  url %>%       # url then
+  read_html()   # read html
 
+# setiap hasil pembacaan parsing html akan berbentuk list
+
+# langkah 3:
+  # membaca title
+  # membaca author
+  # membaca timestamp dari berita
 
 
 
