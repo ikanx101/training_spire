@@ -74,6 +74,42 @@ library(openxlsx)
 write.xlsx(data_final,
            file = "hasil scrape detik.xlsx")  
   
+
+# ==============================================================================
+# kita akan buat custom function bernama detik_scraper dari algoritma yang sudah 
+  # kita tulis di atas
+detik_scraper = function(url_berita){
+  baca = url_berita %>% read_html()
+  judul = 
+    baca %>% html_nodes(".detail__title") %>% html_text(trim = T)
+  wartawan = 
+    baca %>% html_nodes(".detail__author") %>% html_text(trim = T)
+  waktu = 
+    baca %>% html_nodes(".detail__date") %>% html_text(trim = T)
+  isi_berita = 
+    baca %>% html_nodes(".itp_bodycontent") %>% html_text(trim = T)
+  data_final = data.frame(judul,
+                          wartawan,
+                          waktu,
+                          isi_berita)
+  return(data_final)
+}
+
+# ==============================================================================
+# mengambil semua url yang ada pada suatu website
+
+url_utama = "https://news.detik.com/"
+
+links = url_utama %>% read_html() %>% html_nodes("a") %>% html_attr("href")
+
+# filtering yang diinginkan
+links_filtered = links[grepl("https://news.detik.com/berita/d",links)]
+links_filtered = links_filtered[1:10]
+
+# scrape ke 10 link tersebut
+temp = vector("list",10)
+for(i in 1:10){
+  temp[[i]] = detik_scraper(links_filtered[i])
+}
   
-  
-  
+kompilasi_berita = do.call(rbind,temp)
