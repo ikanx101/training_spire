@@ -53,10 +53,11 @@ baca =          # ingin menyimpan hasil parsing html ke dalam object bernama "ba
 
   # membaca isi berita 
   baca %>% 
-    html_nodes(".itp_bodycontent p") %>% 
+    html_nodes(".itp_bodycontent") %>% 
     html_text(trim = T)
 
-
+# keterangan terkait string di R
+# string \n --> spasi enter ke bawah, \t \r --> tab 
 
 
 
