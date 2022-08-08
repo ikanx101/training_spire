@@ -97,19 +97,20 @@ detik_scraper = function(url_berita){
 
 # ==============================================================================
 # mengambil semua url yang ada pada suatu website
-
 url_utama = "https://news.detik.com/"
 
+# scrape semua link dari url_utama
 links = url_utama %>% read_html() %>% html_nodes("a") %>% html_attr("href")
 
 # filtering yang diinginkan
-links_filtered = links[grepl("https://news.detik.com/berita/d",links)]
-links_filtered = links_filtered[1:10]
+links_filtered = links[grepl("https://news.detik.com/berita/d",links)] # bisa baca reguler expression di materi pdf
+links_filtered = links_filtered[1:10] # hanya mengambil top 10 links berita terbaru
 
 # scrape ke 10 link tersebut
 temp = vector("list",10)
 for(i in 1:10){
   temp[[i]] = detik_scraper(links_filtered[i])
 }
-  
+
+# gabung semua hasil
 kompilasi_berita = do.call(rbind,temp)
