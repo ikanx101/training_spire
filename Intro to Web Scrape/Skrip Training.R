@@ -56,4 +56,24 @@ baca =          # ingin menyimpan hasil parsing html ke dalam object bernama "ba
 # string \n --> spasi enter ke bawah, \t \r --> tab 
 
 # sekarang kita akan membuat tabel (dataframe) dari kumpulan single values
+data_final = data.frame(judul,
+                        wartawan,
+                        waktu,
+                        isi_berita)
+  
+# misalkan kita ingin mengekspor data_final ke dalam excel
+# cara pertama: save ke dalam bentuk .csv
+write.csv(data_final,
+          "hasil scrape.csv")
 
+# cara kedua: save ke dalam bentuk .xlsx
+# kita menggunakan library tambahan
+  install.packages("openxlsx")
+
+library(openxlsx)
+write.xlsx(data_final,
+           file = "hasil scrape detik.xlsx")  
+  
+  
+  
+  
