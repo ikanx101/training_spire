@@ -7,7 +7,7 @@
 # untuk membersihkan global environment
 rm(list=ls())
 
-# untuk install libraries
+# untuk install libraries (cukup sekali saja saat pertama kali install R Studio)
 # install.packages("rvest")
 # install.packages("dplyr")
 
@@ -19,3 +19,17 @@ library(rvest) # berguna untuk parsing html
 # di R, itu ada dua aliran (mazhab) untuk melakukan data carpentry:
   # 1. prinsip tidy --> %>% (ini dibacanya "then...") 
   # 2. prinsip data.table --> function_1(function_2(function_3()))
+
+# ==============================================================================
+# kita memulai web scraping
+
+
+
+
+
+
+
+
+
+
+
