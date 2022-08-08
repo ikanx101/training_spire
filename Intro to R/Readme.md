@@ -14,23 +14,9 @@ biglogo     : spire.png
 assets      : {assets: ../../assets}
 --- 
 
-
-<style type="text/css">
-body {background:grey transparent;
-}
-</style>
-
-
-
-    
-
-
-
---- .segue bg:grey
-
 # _INTRODUCTION_
 
---- .class #id
+
 
 ## _Introduction_ __R__
 
@@ -53,7 +39,7 @@ Sehingga *package* atau *library* yang disediakan untuk analisis
 statistika dan analisa numerik juga sangat lengkap dan terus bertambah
 setiap saat.
 
---- .class #id
+
 
 ## Fitur dan Karakteristik
 
@@ -75,7 +61,7 @@ x == y
 ## [1] FALSE
 ```
 
---- .class #id
+
 
 ## Fitur dan Karakteristik
 
@@ -86,7 +72,7 @@ x == y
 - Mudah ditingkatkan melalui penambahan fungsi atau _library_. Penambahan ini dapat dilakukan secara _online_ melalui __CRAN__ atau melalui sumber seperti __github__.
 - Menyediakan berbagai fungsi untuk keperluan visualisasi data. Visualisasi data pada __R__ dapat menggunakan _library_ bawaan atau lainnya seperti `ggplot2`, `ggvis`, `plotly`, dll.
 
---- .class #id
+
 
 ## Kelebihan __R__
 
@@ -97,7 +83,7 @@ Selain karena __R__ dapat digunakan secara gratis terdapat kelebihan lain yang d
 3. _Programable_, pengguna dapat membuat fungsi dan metode baru atau mengembangkan modifikasi dari analisis statistika yang telah ada pada sistem __R__.
 4. Fasiltas grafik yang lengkap.
 
---- .class #id
+
 
 ## Kekurangan __R__
 
@@ -105,7 +91,7 @@ Adapun kekurangan dari R antara lain:
 
 * _Point and Click GUI_, interaksi utama dengan __R__ bersifat __CLI__ (_Command Line Interface_), walaupun saat ini telah dikembangkan _library_ yang memungkinkan kita berinteraksi dengan __R__ menggunakan __GUI__ (_Graphical User Interface_) sederhana menggunakan `library(R-Commander)` yang memiliki fungsi yang terbatas.
 
---- .class #id
+
 
 ## R vs R Studio
 
@@ -119,7 +105,7 @@ Bagi Kamu yang kaget dan tidak terbiasa melihat tampilan yang _intimidating_ sep
 > Tapi tolong diperhatikan bahwa __R Studio__ hanya tambahan tampilan dari __R__ standar. Jadi Kamu tetap harus meng- _install_ __R__ yah!
 
 
---- .class #id
+
 
 ## R Studio
 
@@ -132,11 +118,11 @@ Kelebihan R Studio antara lain:
 
 Jadi, setelah membaca bagian ini pastikan Kamu sudah meng- _install_ __R__ dan __R Studio__ yah. Jangan sampai terbalik urutan instalasinya!
 
---- .segue bg:grey
+
 
 # _LET's GET STARTED_
 
---- .class #id
+
 
 ## Mengenal operator dasar
 
@@ -155,7 +141,7 @@ a + b
 ## [1] 13
 ```
 
---- .class #id
+
 
 ## Mengenal operator dasar
 
@@ -181,7 +167,7 @@ b
 ```
 
 
---- .class #id
+
 
 ## Mengenal operator dasar
 
@@ -206,7 +192,7 @@ a > b
 ## [1] TRUE
 ```
 
---- .class #id
+
 
 ## Mengenal operator dasar
 
@@ -221,7 +207,7 @@ a = 5;b = 3;a*b
 ## [1] 15
 ```
 
---- .class #id
+
 
 ## Working Directory
 
@@ -241,7 +227,7 @@ getwd()
 
 Secara _default_, __R__ menggunakan `C:\\My Documents` sebagai _working directory_.
 
---- .class #id
+
 
 ## Working Directory
 
@@ -259,7 +245,7 @@ setwd("/cloud/project/Intro to R")
 Perubahan _working directory_ akan sangat berguna saat kita ingin memgambil data dari _folder path_ tertentu dan menyimpan hasil analisa kita ke _folder path_ yang berbeda.
 
 
---- .class #id
+
 
 ## Mengenal _packages_ atau _library_
 
@@ -267,7 +253,7 @@ Perubahan _working directory_ akan sangat berguna saat kita ingin memgambil data
 
 Seperti yang sudah saya infokan di bagian pendahuluan. Banyak orang atau komunitas yang mengembangkan berbagai macam `library` sehingga memudahkan kita untuk menyelesaikan masalah di data kita. Kita tidak perlu lagi membuat algoritma dari nol. Cukup memanfaatkan `library` yang tepat saja.
 
---- .class #id
+
 
 ## Mengenal _packages_ atau _library_
 
@@ -283,7 +269,7 @@ Beberapa contoh _libraries_ yang sering saya gunakan:
 8. `expss`: __SPSS__ di __R__.
 8. `xaringan`: membuat _file_ presentasi berformat `html`.
 
---- .class #id
+
 
 ## Instalasi _Packages_
 
@@ -297,7 +283,7 @@ Contoh:
 
 `install.packages("rvest")`
 
---- .class #id
+
 
 ## Mengaktifkan _Packages_
 
@@ -328,7 +314,7 @@ library(dplyr)
 ```
 
 
---- .class #id
+
 
 ## Serba-Serbi Tentang _Packages_
 
@@ -338,7 +324,7 @@ Untuk beberapa `library` ada kemungkinan (kecil) ditemukan kasus saat mereka tid
 
 Misalnya pada saat kita memanggil `library(tidyverse)` dan `library(plyr)`, maka perintah `filter()` yang dimiliki `tidyverse` akan tidak berjalan dengan baik. 
 
---- .class #id
+
 
 ## Serba-Serbi Tentang _Packages_
 
@@ -353,7 +339,7 @@ Ada beberapa solusi yang bisa kita lakukan:
 
 `reshape2::melt(data)`
 
---- .class #id
+
 
 ## _Help_
 
@@ -372,7 +358,7 @@ atau
 ```
 
 
---- .class #id
+
 
 ## _Example_
 
@@ -406,17 +392,17 @@ example(sum)
 ## [1] 15
 ```
 
---- .segue bg:grey
+
 
 # Mulai Bekerja dengan __R__
 
---- .class #id
+
 
 ## Mengenal Data
 
 Sebelum memulai bekerja dengan __R__, ada baiknya saya jelaskan dan ingatkan kembali beberapa hal penting terkait data. Dengan demikian, kita bisa memilih jenis analisa statistika apa yang tepat untuk tipe-tipe data yang berbeda.
 
---- .class #id
+
 
 ## Tipe Data (statistika)
 
@@ -429,7 +415,7 @@ Secara statistika, berikut adalah pembagian data berdasarkan tipenya:
   * __Diskrit__; bilangan bulat (_integer_). 
   * __Kontinu__; bilangan _real_ (mengandung koma).
 
---- .class #id
+
 
 ## Tipe Data (__R__)
 
@@ -442,7 +428,7 @@ Di __R__ ada beberapa tipe data yang sering digunakan. Secara hierarki, bisa diu
 3. `integer`: merupakan tipe data angka berupa bilangan bulat. Sekilas mirip dengan tipe data diskrit di poin __2.1.1__. Namun di beberapa kondisi, tipe data ini bisa dijadikan data __kategorik__ sehingga kita bisa sebut tipenya menjadi `factor`.
 4. `logical`: merupakan tipe data _boolean_. Hanya berisi `TRUE` atau `FALSE`. Tipe data ini sangat berguna saat kita melakukan _if conditional_, _looping_, atau membuat _regex_ (_reguler expression_).
 
---- .class #id
+
 
 ## Struktur Data di __R__
 
@@ -453,7 +439,7 @@ Ada beberapa bentuk struktur data di __R__, yakni:
 3. _Data frame_ atau _tibble_; merupakan kumpulan dari beberapa _vectors_ yang memiliki ukuran sama. Bayangkan sebagai satu tabel di _Ms. Excel_ yang banyaknya baris di setiap kolom sama.
 4. _List_; merupakan bentuk struktur data yang sangat kompleks. Berisi _multiple data_ dengan struktur bermacam-macam.
 
---- .class #id
+
 
 ## Apa gunanya kita mengetahui jenis dan struktur data di __R__?
 
@@ -465,7 +451,7 @@ Contoh:
 
 > Algoritma analisa _simple linear regression_ (`lm()`) memerlukan input berupa `data.frame()` dengan masing-masing _variables_ yang ada di dalamnya berjenis _numeric_.
 
---- .class #id
+
 
 ## Tata Cara Memberikan Nama _Object_ atau Variabel
 
@@ -479,14 +465,14 @@ Berikut adalah tata cara pemberian nama yang akan membuat pekerjaan kita lebih e
 
 Contoh: variabel `tinggi badan` akan lebih baik ditulis dalam bentuk `tinggi.badan` atau `tinggi_badan`.
 
---- .class #id
+
 
 ## Tata Cara Memberikan Nama _Object_ atau Variabel
 
 Jika sudah terlanjur memiliki nama variabel yang tidak seragam atau mengandung spasi (biasanya terjadi saat kita meng- _import_ data dari sumber lain seperti: _excel_), kita bisa merapikannya dengan otomatis dengan memanfaatkan `library(janitor)` fungsi `make_clean_names()` atau `clean_names()`.
 
 
---- .segue bg:grey
+
 
 # Materi __Intro to R__
 
