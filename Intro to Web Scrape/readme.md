@@ -1,115 +1,100 @@
-Training Dasar Web Scraping Menggunakan R
-================
-Ikang Fadhli
-06 Aug 2022
+---
+title: Training Dasar Web Scraping Menggunakan R
+subtitle: Teknik html Parsing dan json Reading
+author: Ikang Fadhli
+date: "08 Aug 2022"
+output: github_document
+---
 
-# Apa itu *Web Scraping*?
 
-*Web scraping* adalah salah satu metode untuk mendapatkan data yang
-terpampang di suatu *website*. Ada berbagai macam cara yang bisa
-digunakan untuk melakukannya. Kita juga bisa menggunakan beberapa
-*software* berbayar, *freemium*, dan *open source*. Masing-masing dengan
-*advantages* dan *disadvantages*-nya tersendiri.
 
-## *Softwares* untuk *Web Scraping*
 
-Ada beberapa *softwares* yang bisa digunakan untuk melakukan *web
-scraping*, yakni:
+# Apa itu _Web Scraping_?
 
-1.  [**Octoparse**](https://www.octoparse.com/).
-    -   Berbayar.
-    -   *Less coding*, berbentuk menu (*white box*).
-2.  [**Apify**](https://apify.com/).
-    -   Berbayar.
-    -   *Medium coding*.
-3.  **R** atau **Python**.
-    -   *Open source* (gratis).
-    -   *Heavy coding*.
-    -   *Full customize*.
+_Web scraping_ adalah salah satu metode untuk mendapatkan data yang terpampang di suatu _website_. Ada berbagai macam cara yang bisa digunakan untuk melakukannya. Kita juga bisa menggunakan beberapa _software_ berbayar, _freemium_, dan _open source_. Masing-masing dengan _advantages_ dan _disadvantages_-nya tersendiri.
 
-## Teknik untuk *Web Scraping*
+## _Softwares_ untuk _Web Scraping_
 
-Ada beberapa teknik *web scraping* yang bisa dilakukan:
+Ada beberapa _softwares_ yang bisa digunakan untuk melakukan _web scraping_, yakni:
 
-1.  *Parsing html* dengan cara **membaca** *page source* `.html` dari
-    situs yang dituju.
-    1.  Kelebihan:
-        1.  Proses relatif cepat (walau tergantung koneksi juga).
-        2.  Bisa untuk kebanyakan situs, seperti: wikipedia, portal
-            berita, blog, dst.
-    2.  Kelemahan:
-        1.  Harus menentukan target `css` dari situs terlebih dahulu.
-        2.  Untuk beberapa situs, proses mencari objek `css` bisa jadi
-            menyulitkan.
-        3.  Tidak bisa digunakan untuk situs dinamis yang menggunakan
-            `javascript`.
-        4.  Untuk situs yang menggunakan *login*, prosesnya agak rumit.
-2.  Mengambil data menggunakan **API** (*Json Reading*).
-    1.  Kelebihan:
-        1.  Lebih mudah dan relatif cepat.
-    2.  Kelemahan:
-        1.  Proses mendapatkan **API** kadang cukup rumit. Kadang
-            didapatkan dengan cara mendaftar *as developer* seperti di
-            *Twitter* atau mencari sendiri saat `inspect` **network**.
-        2.  Biasanya data hasil *scrape* memiliki format `.json` yang
-            jarang dikenal orang awam.
-3.  *Mimicking browser* dengan cara membuat *bot* yang seolah-olah
-    membuka *browser* tertentu dan berinteraksi seperti layaknya
-    manusia.
-    1.  Kelebihan:
-        1.  Bisa untuk (hampir) semua situs. Termasuk *social media*
-            atau situs dengan *login* yang memiliki beberapa *steps
-            authetification*.
-        2.  Bisa mengambil situs dinamis atau mengandung `javascript`.
-    2.  Kelemahan:
-        1.  Proses relatif lambat. Karena bertindak seolah-olah layaknya
-            manusia membuka *browser*.
-        2.  Secara *coding* lebih rumit karena harus membuat dua bagian
-            algoritma: algoritma *mimick* dan algoritma *scraper* `css`.
-        3.  Ini merupakan teknik *advance* dalam *web scraping*.
+1. [__Octoparse__](https://www.octoparse.com/).
+    - Berbayar.
+    - _Less coding_, berbentuk menu (_white box_).
+1. [__Apify__](https://apify.com/).
+    - Berbayar.
+    - _Medium coding_.
+1. __R__ atau __Python__.
+    - _Open source_ (gratis).
+    - _Heavy coding_.
+    - _Full customize_.
 
-## *Libraries* **R** yang Digunakan
+## Teknik untuk _Web Scraping_
 
-Setidaknya ada beberapa *libraries* yang saya gunakan untuk ketiga
-teknik di atas:
+Ada beberapa teknik _web scraping_ yang bisa dilakukan:
 
-1.  *Parsing html*: `rvest` atau `ralger`.
-2.  **API**: `jsonlite` untuk membaca *file* `.json`.
-3.  *Mimicking browser*: `RSelenium`.
+1. _Parsing html_ dengan cara __membaca__ _page source_ `.html` dari situs yang dituju.
+    1. Kelebihan:
+        1. Proses relatif cepat (walau tergantung koneksi juga).
+        1. Bisa untuk kebanyakan situs, seperti: wikipedia, portal berita, blog, dst.
+    1. Kelemahan:
+        1. Harus menentukan target `css` dari situs terlebih dahulu.
+        1. Untuk beberapa situs, proses mencari objek `css` bisa jadi menyulitkan.
+        1. Tidak bisa digunakan untuk situs dinamis yang menggunakan `javascript`.
+        1. Untuk situs yang menggunakan _login_, prosesnya agak rumit. 
+1. Mengambil data menggunakan __API__ (_Json Reading_).
+    1. Kelebihan:
+        1. Lebih mudah dan relatif cepat.
+    1. Kelemahan:
+        1. Proses mendapatkan __API__ kadang cukup rumit. Kadang didapatkan dengan cara mendaftar _as developer_ seperti di _Twitter_ atau mencari sendiri saat `inspect` __network__.
+        1. Biasanya data hasil _scrape_ memiliki format `.json` yang jarang dikenal orang awam.
+1. _Mimicking browser_ dengan cara membuat _bot_ yang seolah-olah membuka _browser_ tertentu dan berinteraksi seperti layaknya manusia.
+    1. Kelebihan:
+        1. Bisa untuk (hampir) semua situs. Termasuk _social media_ atau situs dengan _login_ yang memiliki beberapa _steps authetification_.
+        1. Bisa mengambil situs dinamis atau mengandung `javascript`.
+    1. Kelemahan:
+        1. Proses relatif lambat. Karena bertindak seolah-olah layaknya manusia membuka _browser_.
+        1. Secara _coding_ lebih rumit karena harus membuat dua bagian algoritma: algoritma _mimick_ dan algoritma _scraper_ `css`.
+        1. Ini merupakan teknik _advance_ dalam _web scraping_.
+   
+## _Libraries_ __R__ yang Digunakan
+
+Setidaknya ada beberapa _libraries_ yang saya gunakan untuk ketiga teknik di atas:
+
+1. _Parsing html_: `rvest` atau `ralger`.
+1. __API__: `jsonlite` untuk membaca _file_ `.json`.
+1. _Mimicking browser_: `RSelenium`.
 
 Kali ini saya akan membahas teknik pertama dan kedua.
 
-------------------------------------------------------------------------
+---
 
-# Resep dan Alat yang Digunakan untuk *Web Scraping* di **R**
+# Resep dan Alat yang Digunakan untuk _Web Scraping_ di __R__
 
-Selain **R**, kita memerlukan *Chrome* dengan *extension*
-[`SelectorGadget`](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en).
+Selain __R__, kita memerlukan _Chrome_ dengan _extension_ [`SelectorGadget`](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en).
 
 Mari kita mulai.
 
-------------------------------------------------------------------------
+---
 
-# *Parsing HTML*
+# _Parsing HTML_
 
 ## `library(rvest)`
 
-`library(rvest)` merupakan salah satu *library* yang paling banyak
-digunakan untuk melakukan *web scraping* di **R** karena prinsip
-dasarnya (*html parsing*) bisa digunakan untuk (hampir) semua
-*websites*.
+`library(rvest)` merupakan salah satu _library_ yang paling banyak digunakan untuk melakukan _web scraping_ di __R__ karena prinsip dasarnya (_html parsing_) bisa digunakan untuk (hampir) semua _websites_.
 
-> Jika menguasai `rvest`, kita bisa dengan mudah mendapatkan data dari
-> *web*.
+> Jika menguasai `rvest`, kita bisa dengan mudah mendapatkan data dari _web_.
 
-Kita hendak melakukan beberapa *web scraping* sebagai berikut:
+Kita hendak melakukan beberapa _web scraping_ sebagai berikut:
 
-1.  Mengambil teks atau angka dari *web*.
-2.  Mengambil tabel dari *web*.
-3.  Mengambil *url(s)* dari *web*.
+1. Mengambil teks atau angka dari _web_.
+1. Mengambil tabel dari _web_.
+1. Mengambil _url(s)_ dari _web_.
 
-------------------------------------------------------------------------
 
-# *JSON Reading*
+
+
+---
+
+# _JSON Reading_
 
 ## `library(jsonlite)`
