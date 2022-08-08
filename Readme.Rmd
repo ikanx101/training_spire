@@ -1,0 +1,10 @@
+---
+title: "Training Web Scrape dengan R"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Materi _training_ ini bisa diunduh pada _folders_ terkait di _repository_ ini.
