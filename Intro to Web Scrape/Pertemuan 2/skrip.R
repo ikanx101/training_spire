@@ -38,4 +38,16 @@ df_covid =
          total_recovered = as.numeric(total_recovered)
   )
 
+
 save(df_covid,file = "covid.rda")
+
+
+
+
+
+
+
+
+# reguler expression
+# regex
+# pattern matching
