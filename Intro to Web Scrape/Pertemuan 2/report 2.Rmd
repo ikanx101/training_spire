@@ -1,0 +1,57 @@
+---
+title: "Report COVID 2022"
+subtitle: "By Ikang"
+output: ioslides_presentation
+date: "16 Agustus 2022"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+rm(list=ls())
+
+library(dplyr)
+library(ggplot2)
+
+load("covid.rda")
+```
+
+## TOP 10 Negara
+
+### By total cases
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+df_covid %>% 
+  arrange(desc(total_cases)) %>% 
+  head(10) %>% 
+  mutate(label = total_cases/1000000,
+         label = round(label,1)) %>% 
+  ggplot(aes(x = reorder(country_other,total_cases),
+             y = total_cases)) +
+  geom_col(fill = "darkred",
+           color = "black") +
+  geom_label(aes(label = label)) +
+  coord_flip() +
+  labs(title = "TOP 10 Negara Total Cases",
+       subtitle = "Data dari worldometers",
+       y = "Total Cases",
+       x = "Negara") +
+  theme_minimal()
+```
+
+## Total Cases vs Total Recovered
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+df_covid %>% 
+  arrange(desc(total_cases)) %>% 
+  head(20) %>% 
+  ggplot(aes(x = total_recovered,
+             y = total_cases)) +
+  geom_point()+
+  geom_smooth() +
+  labs(title = "TOP 20 Negara Total Cases vs Total Recovered",
+       subtitle = "Data dari worldometers",
+       y = "Total Recovered",
+       x = "Total Cases") +
+  theme_light()
+```

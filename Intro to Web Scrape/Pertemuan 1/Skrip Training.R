@@ -1,7 +1,7 @@
 # ==============================================================================
 # skrip training web scraping untuk SPIRE
 # by: ikang
-# tgl 8 agustus 2022
+# tgl 8 agustus 2022  
 
 # ==============================================================================
 # untuk membersihkan global environment
