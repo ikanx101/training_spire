@@ -179,31 +179,34 @@ for(i in 1:3){
 data_final = do.call(rbind,hasil)
 
 
+# === END SCRAPE ===
 
+# ==============================================================================
+# proses data carpentry
+data_clean = 
+  data_final %>% 
+  mutate(
+    # kita akan ubah rating
+    rating_merchant = as.numeric(rating_merchant),
+    
+    # kita akan ubah jarak
+    jarak = gsub("\\,",".",jarak),
+    jarak = gsub("km","",jarak),
+    jarak = gsub(" ","",jarak),
+    jarak = as.numeric(jarak),
+    
+    # kita akan ubah harga
+    harga = gsub("\\.","",harga),
+    harga = as.numeric(harga)
+  )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# menghitung summary data
+data_clean %>% 
+  group_by(nama_merchant) %>% 
+  summarise(mean = mean(harga),
+            min = min(harga),
+            max = max(harga)) %>% 
+  ungroup()
 
 
 
