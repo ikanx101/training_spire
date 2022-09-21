@@ -11,12 +11,15 @@
 # cara instalasi:
 # install.packages("RSelenium")
 
-
-
-
 # ===============================================================================
 # RSelenium merupakan metode mimicking browser sehingga sangat ampuh untuk digunakan 
   # untuk melakukan web scraping dari situs manapun.
+  
+  # advantages:
+    # reliable (bisa untuk situs dengan lpgin atau 2 step verification)
+  # disadvantages:
+    # slow
+
   # Kali ini kita akan melakukan web scraping dari situs grab food.
   # Mari kita mulai...
 
@@ -46,7 +49,7 @@ remote_driver = driver[["client"]]
 # membuka situs dari url
 remote_driver$navigate(url)
 
-
+# ===============================================================================
 
 
 
