@@ -16,11 +16,11 @@
   # untuk melakukan web scraping dari situs manapun.
   
   # advantages:
-    # reliable (bisa untuk situs dengan lpgin atau 2 step verification)
+    # reliable (bisa untuk situs dengan login atau 2 step verification)
   # disadvantages:
     # slow
 
-  # Kali ini kita akan melakukan web scraping dari situs grab food.
+  # Kali ini kita akan melakukan web scraping dari situs grab food
   # Mari kita mulai...
 
 # kita set working directory
@@ -30,7 +30,7 @@ setwd("~/Documents/Training SPIRE/Sesi 3 Intro to RSelenium")
 rm(list=ls())
 
 # memanggil libraries
-library(dplyr)        # digunakan agar kita bisa menggunakan ` %>% `
+library(dplyr)        # digunakan agar kita bisa menggunakan ` %>% ` 
 library(rvest)        # digunakan untuk melakukan parsing html
 library(RSelenium)    # digunakan untuk memanggil RSelenium
 
@@ -45,6 +45,8 @@ versi_chrome = "105.0.5195.19" # ini kita harus pastikan versi chrome nya tersed
 driver =  RSelenium::rsDriver(browser = "chrome",
                               chromever = versi_chrome) 
 remote_driver = driver[["client"]] 
+
+# sampai baris ini, seharusnya sudah terbuka chrome-nya
 
 # membuka situs dari url
 remote_driver$navigate(url)
