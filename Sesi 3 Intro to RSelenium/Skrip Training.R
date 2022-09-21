@@ -67,5 +67,33 @@ for(i in 1:4){
 }
 
 
+# ===============================================================================
+# TAHAP I
+# sekarang kita akan mengambil semua link dari merchant yang ada
+# caranya adalah dengan menggabungkan rvest dengan si RSelenium
+
+urls = 
+  remote_driver$getPageSource()[[1]] %>%   # ini adalah bagian RSelenium membuka pagesource
+  read_html() %>%                          # ini bagian rvest: membaca html
+  html_nodes("a") %>%                      # ini bagian rvest: mencari urls
+  html_attr("href")                        # ini bagian rvest: mencari urls
+
+
+# di sini kita akan filter hanya mengambil link dari merchant
+urls = urls[grepl("id/restaurant",urls)]
+
+# di sini saya tambahin link merchant agar lengkap
+urls = paste0("https://food.grab.com",urls)
+
+
+
+
+
+
+
+
+
+
+
 
 
