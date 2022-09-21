@@ -34,3 +34,20 @@ library(RSelenium)    # digunakan untuk memanggil RSelenium
 # set url grab
 url = "https://food.grab.com/id/id/"
 
+
+# ===============================================================================
+# memulai selenium
+  # kita akan panggil
+versi_chrome = "105.0.5195.19"
+driver =  RSelenium::rsDriver(browser = "chrome",
+                              chromever = versi_chrome) # ini kita harus pastikan versi chrome nya tersedia
+remote_driver = driver[["client"]] 
+
+# membuka situs dari url
+remote_driver$navigate(url)
+
+
+
+
+
+
