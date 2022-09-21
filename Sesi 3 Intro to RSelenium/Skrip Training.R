@@ -38,9 +38,9 @@ url = "https://food.grab.com/id/id/"
 # ===============================================================================
 # memulai selenium
   # kita akan panggil
-versi_chrome = "105.0.5195.19"
+versi_chrome = "105.0.5195.19" # ini kita harus pastikan versi chrome nya tersedia
 driver =  RSelenium::rsDriver(browser = "chrome",
-                              chromever = versi_chrome) # ini kita harus pastikan versi chrome nya tersedia
+                              chromever = versi_chrome) 
 remote_driver = driver[["client"]] 
 
 # membuka situs dari url
