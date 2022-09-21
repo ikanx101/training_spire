@@ -52,6 +52,19 @@ remote_driver = driver[["client"]]
 remote_driver$navigate(url)
 
 # ===============================================================================
+# kita akan membuat function untuk klik "tampilkan lebih banyak"
+  # kita akan minta selenium mencari button dengan css = .ant-btn-block
+  # lalu diklik berulang kali
+
+# find css
+css = ".ant-btn-block"
+next_klik = remote_driver$findElement("css", css)
+
+# klik berulang kali
+for(i in 1:4){
+  next_klik$clickElement()
+  Sys.sleep(3)
+}
 
 
 
