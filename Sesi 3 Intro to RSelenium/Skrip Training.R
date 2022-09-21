@@ -153,7 +153,8 @@ baca = remote_driver$getPageSource()[[1]]
       html_text()
 
 # gabung ke dataframe
-result_data = data.frame(nama_merchant,kategori_merchant,rating_merchant,jarak,jam_buka,
+result_data = data.frame(nama_merchant,kategori_merchant,
+                         rating_merchant,jarak,jam_buka,
                          nama_menu,harga)
 
 
