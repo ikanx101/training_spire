@@ -33,3 +33,4 @@ library(RSelenium)    # digunakan untuk memanggil RSelenium
 
 # set url grab
 url = "https://food.grab.com/id/id/"
+
