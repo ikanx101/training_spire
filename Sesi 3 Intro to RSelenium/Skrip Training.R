@@ -96,70 +96,87 @@ urls = paste0("https://food.grab.com",urls)
 # kita set sebagai contoh membuka situs pertama dari urls
 i = 1
 
-# membuka situs dari url
-remote_driver$navigate(urls[i])
 
-# membuka pagesource dari situs merchant
-baca = remote_driver$getPageSource()[[1]]
-
-# kita lanjut untuk parsing html menggunakan rvest  
+# saya akan membuat function untuk melakukan keseluruhan proses scraping url merchant
+scrape_merchant = function(url_merchant){
+  # membuka situs dari url
+  remote_driver$navigate(url_merchant)
+  
+  # membuka pagesource dari situs merchant
+  baca = remote_driver$getPageSource()[[1]]
+  
+  # kita lanjut untuk parsing html menggunakan rvest  
   # nama restoran
-    nama_merchant = 
-      baca %>% 
-      read_html() %>% 
-      html_nodes(".name___1Ls94") %>% 
-      html_text()
-
+  nama_merchant = 
+    baca %>% 
+    read_html() %>% 
+    html_nodes(".name___1Ls94") %>% 
+    html_text()
+  
   # kategori merchant
-    kategori_merchant = 
-      baca %>% 
-      read_html() %>% 
-      html_nodes(".cuisine___3sorn") %>% 
-      html_text()
+  kategori_merchant = 
+    baca %>% 
+    read_html() %>% 
+    html_nodes(".cuisine___3sorn") %>% 
+    html_text()
+  
+  # rating merchant
+  rating_merchant = 
+    baca %>% 
+    read_html() %>% 
+    html_nodes(".ratingText___1Q08c") %>% 
+    html_text()
+  
+  # jarak
+  jarak = 
+    baca %>% 
+    read_html() %>% 
+    html_nodes(".distance___3UWcK div") %>%
+    html_text()
+  
+  # jam buka
+  jam_buka = 
+    baca %>% 
+    read_html() %>% 
+    html_nodes(".openHoursText___9q0va") %>%
+    html_text()
+  
+  # nama menu
+  nama_menu = 
+    baca %>% 
+    read_html() %>% 
+    html_nodes(".itemNameDescription___38JZv") %>% 
+    html_text()
+  
+  # harga
+  harga = 
+    baca %>% 
+    read_html() %>% 
+    html_nodes(".discountedPrice___3MBVA") %>%
+    html_text()
+  
+  # gabung ke dataframe
+  result_data = data.frame(nama_merchant,kategori_merchant,
+                           rating_merchant,jarak,jam_buka,
+                           nama_menu,harga)
+  
+  # yakni mengeluarkan result data sebagai output function
+  return(result_data)
+}
 
-    # rating merchant
-    rating_merchant = 
-      baca %>% 
-      read_html() %>% 
-      html_nodes(".ratingText___1Q08c") %>% 
-      html_text()
-    
-    # jarak
-    jarak = 
-      baca %>% 
-      read_html() %>% 
-      html_nodes(".distance___3UWcK div") %>%
-      html_text()
-    
-    # jam buka
-    jam_buka = 
-      baca %>% 
-      read_html() %>% 
-      html_nodes(".openHoursText___9q0va") %>%
-      html_text()
-    
-    # nama menu
-    nama_menu = 
-      baca %>% 
-      read_html() %>% 
-      html_nodes(".itemNameDescription___38JZv") %>% 
-      html_text()
+# kita akan buat "rumah data" untuk hasil scrape per i
+hasil = vector("list",3) # tinggal disesuaikan dengan banyaknya links
 
-    # harga
-    harga = 
-      baca %>% 
-      read_html() %>% 
-      html_nodes(".discountedPrice___3MBVA") %>%
-      html_text()
+# kita akan membuat looping dari i = 1 sampai i = 3
+for(i in 1:3){
+  # proses scrape merchant
+  hasil[[i]] = scrape_merchant(urls[i])
+  # kita kasih jeda
+  Sys.sleep(5)
+}
 
-# gabung ke dataframe
-result_data = data.frame(nama_merchant,kategori_merchant,
-                         rating_merchant,jarak,jam_buka,
-                         nama_menu,harga)
-
-
-
-
+# langkah akhir
+data_final = do.call(rbind,hasil)
 
 
 
