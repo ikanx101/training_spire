@@ -85,6 +85,98 @@ urls = urls[grepl("id/restaurant",urls)]
 # di sini saya tambahin link merchant agar lengkap
 urls = paste0("https://food.grab.com",urls)
 
+# ===============================================================================
+# TAHAP II
+# kita akan ambil semua informasi merchant di masing-masing urls
+  # langkahnya simpel:
+    # 1. suruh selenium buka urls
+    # 2. suruh selenium membuka pagesource
+    # 3. kita scrape dengan rvest
+
+# kita set sebagai contoh membuka situs pertama dari urls
+i = 1
+
+# membuka situs dari url
+remote_driver$navigate(urls[i])
+
+# membuka pagesource dari situs merchant
+baca = remote_driver$getPageSource()[[1]]
+
+# kita lanjut untuk parsing html menggunakan rvest  
+  # nama restoran
+    nama_merchant = 
+      baca %>% 
+      read_html() %>% 
+      html_nodes(".name___1Ls94") %>% 
+      html_text()
+
+  # kategori merchant
+    kategori_merchant = 
+      baca %>% 
+      read_html() %>% 
+      html_nodes(".cuisine___3sorn") %>% 
+      html_text()
+
+    # rating merchant
+    rating_merchant = 
+      baca %>% 
+      read_html() %>% 
+      html_nodes(".ratingText___1Q08c") %>% 
+      html_text()
+    
+    # jarak
+    jarak = 
+      baca %>% 
+      read_html() %>% 
+      html_nodes(".distance___3UWcK div") %>%
+      html_text()
+    
+    # jam buka
+    jam_buka = 
+      baca %>% 
+      read_html() %>% 
+      html_nodes(".openHoursText___9q0va") %>%
+      html_text()
+    
+    # nama menu
+    nama_menu = 
+      baca %>% 
+      read_html() %>% 
+      html_nodes(".itemNameDescription___38JZv") %>% 
+      html_text()
+
+    # harga
+    harga = 
+      baca %>% 
+      read_html() %>% 
+      html_nodes(".discountedPrice___3MBVA") %>%
+      html_text()
+
+# gabung ke dataframe
+result_data = data.frame(nama_merchant,kategori_merchant,rating_merchant,jarak,jam_buka,
+                         nama_menu,harga)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
