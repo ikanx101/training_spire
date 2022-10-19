@@ -24,7 +24,8 @@
   # Mari kita mulai...
 
 # kita set working directory
-setwd("~/Documents/Training SPIRE/Sesi 3 Intro to RSelenium")
+# setwd("~/Documents/Training SPIRE/Sesi 3 Intro to RSelenium")
+setwd("/mnt/chromeos/removable/Workstation/training_spire/Sesi 3 Intro to RSelenium/")
 
 # kita hapus global environment
 rm(list=ls())
@@ -41,7 +42,7 @@ url = "https://food.grab.com/id/id/"
 # ===============================================================================
 # memulai selenium
   # kita akan panggil
-versi_chrome = "105.0.5195.19" # ini kita harus pastikan versi chrome nya tersedia
+versi_chrome = "106.0.5249.61" # ini kita harus pastikan versi chrome nya tersedia
 driver =  RSelenium::rsDriver(browser = "chrome",
                               chromever = versi_chrome) 
 remote_driver = driver[["client"]] 
